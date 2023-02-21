@@ -26,10 +26,16 @@ const handleSystemTime = () => {
 class Logger {
   privateEventEmitter:EventEmitterClass;
   side:string = 'SDK';
+  onEvent?:(data: any) => void;
 
   constructor(side:string = 'SDK') {
     this.privateEventEmitter = new EventEmitterClass();
     this.side = side;
+    this.privateEventEmitter.subscribe('@all', (data: any) => {
+      if(this.onEvent) {
+        this.onEvent(data);
+      }
+    });
   }
 
   private log = (type:string, event: string, ...args: any[]) => {
@@ -69,6 +75,11 @@ class Logger {
 
   public setSide(side: string) {
     this.side = side;
+  }
+
+  public addEventListener(eventName: string, callback: any): void {
+    if(!callback) return;
+    this.privateEventEmitter.subscribe(eventName, callback);
   }
   
   public error = (event: string, ...args: any[]) => {
