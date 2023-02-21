@@ -27,7 +27,7 @@ class Logger {
   privateEventEmitter:EventEmitterClass;
   side:string = 'SDK';
 
-  constructor(side:string) {
+  constructor(side:string = 'SDK') {
     this.privateEventEmitter = new EventEmitterClass();
     this.side = side;
   }
@@ -67,7 +67,7 @@ class Logger {
     }
   }
 
-  public changeSide(side: string) {
+  public setSide(side: string) {
     this.side = side;
   }
   
