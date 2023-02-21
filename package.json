@@ -1,6 +1,6 @@
 {
   "name": "magic-tools",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "js tools",
   "main": "dist/index.js",
   "scripts": {
