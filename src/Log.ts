@@ -20,7 +20,7 @@ const handleSystemTime = () => {
   const minute = time.getMinutes();
   const second = time.getSeconds();
 
-  return `[${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}:${second < 10 ? `0${second}` : second}]`;
+  return `${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}:${second < 10 ? `0${second}` : second}`;
 }
 
 class Logger {
