@@ -1,6 +1,7 @@
 class State {
   private static _instances: any = {};
   private _value?: any;
+  private _onUpdate?: any;
 
   constructor(initialValue: any) {
     this.value = initialValue;
@@ -12,10 +13,11 @@ class State {
 
   public set value(value: any) {
     this._value = value;
+    this._onUpdate(value);
   }
 
-  public clear() {
-    this.value = undefined;
+  public set onUpdate(callback: any) {
+    this._onUpdate = callback;
   }
 
   static instance(name: string, initialValue: any) {
