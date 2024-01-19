@@ -1,4 +1,4 @@
-import { EventEmitterClass } from "./EventEmitter";
+import { EventEmitter } from "./EventEmitter";
 
 const events = {
   "PUSH": "PUSH",
@@ -21,13 +21,13 @@ class QueueClass {
   private _queue:QueueInterface[];
   private _listPendingTask:PendingTaskInterface[];
   private _isProcessing:boolean;
-  private _privateEventEmitter: EventEmitterClass;
+  private _privateEventEmitter: EventEmitter;
 
   constructor() {
     this._queue = [];
     this._listPendingTask = [];
     this._isProcessing = false;
-    this._privateEventEmitter = new EventEmitterClass();
+    this._privateEventEmitter = new EventEmitter();
     const self = this;
 
     this._privateEventEmitter.subscribe([events.PUSH, events.SHIFT], () => {

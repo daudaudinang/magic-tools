@@ -11,7 +11,8 @@ export interface Event {
   callback: (arg0: any) => any;
 }
 
-class EventEmitterClass {
+class EventEmitter {
+  private static _instances: any = {};
   private _events: any;
 
   constructor() {
@@ -83,10 +84,23 @@ class EventEmitterClass {
 
     return true;
   }
+
+  clear() {
+    this._events = {};
+  }
+
+  static instance(name: string) {
+    if (!EventEmitter._instances[name]) {
+      EventEmitter._instances[name] = new EventEmitter();
+    }
+    return EventEmitter._instances[name];
+  }
+  
+  static clearAllInstances() {
+    Object.values(EventEmitter._instances).forEach((instance: any) => instance.clear());
+  }
 }
-const GlobalEventEmitter = new EventEmitterClass();
 
 export { 
-  GlobalEventEmitter, 
-  EventEmitterClass 
+  EventEmitter 
 };

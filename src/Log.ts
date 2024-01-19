@@ -1,4 +1,4 @@
-import { EventEmitterClass } from "./EventEmitter";
+import { EventEmitter } from "./EventEmitter";
 
 const privateEvents = {
   "INFO": "INFO", // Thông tin liên quan đến cuộc họp
@@ -24,12 +24,12 @@ const handleSystemTime = () => {
 }
 
 class Logger {
-  privateEventEmitter:EventEmitterClass;
+  privateEventEmitter:EventEmitter;
   side:string = 'SDK';
   onEvent?:(data: any) => void;
 
   constructor(side:string = 'SDK') {
-    this.privateEventEmitter = new EventEmitterClass();
+    this.privateEventEmitter = new EventEmitter();
     this.side = side;
     this.privateEventEmitter.subscribe('@all', (data: any) => {
       if(this.onEvent) {
