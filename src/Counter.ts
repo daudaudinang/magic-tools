@@ -1,8 +1,10 @@
 class Counter {
   private static _instances: any = {};
-  private _value: number = 0;
+  private _initialValue: number = 0;
+  private _value: number = this._initialValue;
 
   constructor(initialValue: number) {
+    this._initialValue = initialValue;
     this.value = initialValue;
   }
 
@@ -23,7 +25,7 @@ class Counter {
   }
 
   public clear() {
-    this.value = 0;
+    this.value = this._initialValue;
   }
 
   static instance(name: string, initialValue: number = 0) {
