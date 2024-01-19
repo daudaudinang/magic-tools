@@ -1,7 +1,7 @@
 {
   "name": "magic-tools",
-  "version": "1.1.1",
-  "description": "js tools",
+  "version": "1.2.0",
+  "description": "huynq js tools",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
