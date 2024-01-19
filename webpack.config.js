@@ -21,5 +21,6 @@ module.exports = {
       // name: 'MagicTools',
       type: 'commonjs2',
     },
-  }
+  },
+  mode: 'production',
 };
