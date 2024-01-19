@@ -27,6 +27,10 @@ class State {
     return State._instances[name];
   }
 
+  static destroyInstance(name: string) {
+    delete State._instances[name];
+  }
+
   static clearAllInstances() {
     Object.values(State._instances).forEach((instance: any) => instance.clear());
   }

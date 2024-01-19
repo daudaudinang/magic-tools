@@ -44,6 +44,10 @@ class Timeout {
     return Timeout._instances[name];
   }
 
+  static destroyInstance(name: string) {
+    delete Timeout._instances[name];
+  }
+
   static getAllInstance() {
     return Timeout._instances;
   }

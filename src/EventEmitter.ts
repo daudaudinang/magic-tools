@@ -95,6 +95,10 @@ class EventEmitter {
     }
     return EventEmitter._instances[name];
   }
+
+  static destroyInstance(name: string) {
+    delete EventEmitter._instances[name];
+  }
   
   static clearAllInstances() {
     Object.values(EventEmitter._instances).forEach((instance: any) => instance.clear());

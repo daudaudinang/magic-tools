@@ -35,6 +35,10 @@ class Counter {
     return Counter._instances[name];
   }
 
+  static destroyInstance(name: string) {
+    delete Counter._instances[name];
+  }
+
   static clearAllInstances() {
     Object.values(Counter._instances).forEach((instance: any) => instance.clear());
   }

@@ -44,6 +44,10 @@ class Interval {
     return Interval._instances[name];
   }
 
+  static destroyInstance(name: string) {
+    delete Interval._instances[name];
+  }
+
   static getAllInstance() {
     return Interval._instances;
   }
