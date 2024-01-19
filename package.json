@@ -1,6 +1,6 @@
 {
   "name": "magic-tools",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "huynq js tools",
   "main": "dist/index.js",
   "scripts": {

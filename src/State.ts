@@ -20,7 +20,7 @@ class State {
     this._onUpdate = callback;
   }
 
-  static instance(name: string, initialValue: any) {
+  static instance(name: string, initialValue?: any) {
     if (!State._instances[name]) {
       State._instances[name] = new State(initialValue);
     }
