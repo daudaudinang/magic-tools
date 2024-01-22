@@ -9,8 +9,8 @@ class Interval {
     this._timeInterval = _timeInterval;
   }
 
-  public start() {
-    if (this._value) {
+  public start(clearQueue: boolean = true): void {
+    if (this._value && clearQueue) {
       clearInterval(this._value);
       this._value = undefined;
     }

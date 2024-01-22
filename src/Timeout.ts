@@ -9,8 +9,8 @@ class Timeout {
     this._timeout = _timeInterval;
   }
 
-  public start() {
-    if (this._value) {
+  public start(clearQueue: boolean = true) {
+    if (this._value && clearQueue) {
       clearTimeout(this._value);
       this._value = undefined;
     }
