@@ -28,7 +28,7 @@ class Counter {
     this.value = this._initialValue;
   }
 
-  static instance(name: string, initialValue: number = 0) {
+  static instance(name: string, initialValue: number = 0): Counter {
     if (!Counter._instances[name]) {
       Counter._instances[name] = new Counter(initialValue);
     }

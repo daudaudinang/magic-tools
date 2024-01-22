@@ -89,7 +89,7 @@ class EventEmitter {
     this._events = {};
   }
 
-  static instance(name: string) {
+  static instance(name: string): EventEmitter {
     if (!EventEmitter._instances[name]) {
       EventEmitter._instances[name] = new EventEmitter();
     }

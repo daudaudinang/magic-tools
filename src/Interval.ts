@@ -37,7 +37,7 @@ class Interval {
     return this._value;
   }
 
-  static instance(name: string) {
+  static instance(name: string): Interval {
     if (!Interval._instances[name]) {
       Interval._instances[name] = new Interval();
     }

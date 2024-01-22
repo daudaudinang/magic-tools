@@ -13,14 +13,16 @@ class State {
 
   public set value(value: any) {
     this._value = value;
-    this._onUpdate(value);
+    if(typeof this._onUpdate === 'function') {
+      this._onUpdate(value);
+    }
   }
 
   public set onUpdate(callback: any) {
     this._onUpdate = callback;
   }
 
-  static instance(name: string, initialValue?: any) {
+  static instance(name: string, initialValue?: any): State {
     if (!State._instances[name]) {
       State._instances[name] = new State(initialValue);
     }

@@ -37,7 +37,7 @@ class Timeout {
     return this._value;
   }
 
-  static instance(name: string) {
+  static instance(name: string): Timeout {
     if (!Timeout._instances[name]) {
       Timeout._instances[name] = new Timeout();
     }
